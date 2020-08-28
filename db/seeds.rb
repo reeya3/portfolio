@@ -5,3 +5,35 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
+10.times do |blog|
+  Blog.create!(
+    title: "my blog #{blog}",
+    body: "A paragraph is a series of related sentences developing a central idea,
+           called the topic. Try to think about paragraphs in terms of thematic 
+           unity: a paragraph is a sentence or a group of sentences that supports one central"
+    )
+end
+ puts "10 blogs created"
+
+5.times do |skill|
+  Skill.create!(
+    title: "skill #{skill}",
+    percentage_completed: 15  
+  )
+end
+ puts "5 skills created"
+
+  9.times do |portfoliio_item|
+
+  Portfoliio.create!(
+    title: "portfoliio #{portfoliio_item}",
+    subtitle:"this is sub title",
+    body: "A paragraph is a series of related sentences developing a central idea,
+           called the topic. Try to think about paragraphs in terms of thematic 
+           unity: a paragraph is a sentence or a group of sentences that supports one central",
+    main_img: "https://via.placeholder.com/150x200",
+    thumb_img:"https://via.placeholder.com/150x200",
+    )
+  end
+
+  puts "9 portfoliio created"
