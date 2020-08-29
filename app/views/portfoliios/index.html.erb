@@ -4,7 +4,9 @@
   <p><%= portfoliio_item.title %></p>
   <p><%= portfoliio_item.subtitle %></p>
   <p><%= portfoliio_item.body %></p>
-  <p><%= image_tag portfoliio_item.main_img %></p>
-  <p><%= image_tag portfoliio_item.thumb_img %></p>
+  <p><%#= image_tag portfoliio_item.main_img %></p>
+  <p><%= image_tag portfoliio_item.thumb_img unless portfoliio_item.thumb_img.nil?%>
+    
+  </p>
 
 <%end%>
