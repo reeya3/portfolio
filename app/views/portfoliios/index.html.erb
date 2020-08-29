@@ -11,4 +11,7 @@
   <%= link_to "Edit", edit_portfoliio_path(portfoliio_item.id) %>
   <a href="/portfoliios/<%= portfoliio_item.id %>/edit">edit</a>
 
+  <%= link_to 'Destroy', portfoliio_path(portfoliio_item.id), method: :delete,
+     data: { confirm: 'Are you sure?' } %>
+
 <%end%>
