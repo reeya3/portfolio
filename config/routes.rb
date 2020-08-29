@@ -1,5 +1,4 @@
 Rails.application.routes.draw do
-  resources :blogs
   resources :portfoliios, expect: [:show]
   get 'portfoliio/:id', to: 'portfoliios#show', as: 'portfoliio_show'
   #get 'pages/contact'
@@ -10,5 +9,10 @@ Rails.application.routes.draw do
   get 'about', to: 'pages#about'
 
   root to: 'pages#home'
+  resources :blogs do
+    member do
+      get :toggle_status
+    end
+  end
 
 end
