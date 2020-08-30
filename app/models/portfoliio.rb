@@ -1,5 +1,7 @@
 class Portfoliio < ApplicationRecord
   has_many :technologies
+  accepts_nested_attributes_for :technologies,
+                                reject_if: lambda { |attrs| attrs['name'].blank? }
   validates_presence_of :title, :subtitle, :body, :main_img, :thumb_img
   scope :rails, -> { where(subtitle: "this is sub title for rails") }
 
