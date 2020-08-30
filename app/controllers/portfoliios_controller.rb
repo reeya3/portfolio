@@ -3,6 +3,10 @@ class PortfoliiosController < ApplicationController
     @portfoliio_items = Portfoliio.all
   end
 
+  def prails
+    @rails_items = Portfoliio.rails
+  end
+
   def new
     @portfoliio_item = Portfoliio.new
   end

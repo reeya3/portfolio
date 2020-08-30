@@ -5,15 +5,24 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
+
+4.times do |topic|
+  Topic.create(
+    title: "topic #{topic}")
+end
+
+puts "4 portfoliio created"
+
 10.times do |blog|
   Blog.create!(
     title: "my blog #{blog}",
     body: "A paragraph is a series of related sentences developing a central idea,
            called the topic. Try to think about paragraphs in terms of thematic 
-           unity: a paragraph is a sentence or a group of sentences that supports one central"
+           unity: a paragraph is a sentence or a group of sentences that supports one central",
+    topic_id: Topic.last.id
     )
 end
- puts "10 blogs created"
+puts "10 blogs created"
 
 5.times do |skill|
   Skill.create!(
@@ -23,11 +32,11 @@ end
 end
  puts "5 skills created"
 
-  9.times do |portfoliio_item|
+  6.times do |portfoliio_item|
 
   Portfoliio.create!(
     title: "portfoliio #{portfoliio_item}",
-    subtitle:"this is sub title",
+    subtitle:"this is sub title for rails",
     body: "A paragraph is a series of related sentences developing a central idea,
            called the topic. Try to think about paragraphs in terms of thematic 
            unity: a paragraph is a sentence or a group of sentences that supports one central",
@@ -36,4 +45,16 @@ end
     )
   end
 
+  3.times do |portfoliio_item|
+
+  Portfoliio.create!(
+    title: "portfoliio #{portfoliio_item}",
+    subtitle:"this is sub title for vue js",
+    body: "A paragraph is a series of related sentences developing a central idea,
+           called the topic. Try to think about paragraphs in terms of thematic 
+           unity: a paragraph is a sentence or a group of sentences that supports one central",
+    main_img: "https://via.placeholder.com/150x200",
+    thumb_img:"https://via.placeholder.com/150x200",
+    )
+  end
   puts "9 portfoliio created"

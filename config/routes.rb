@@ -1,6 +1,8 @@
 Rails.application.routes.draw do
-  resources :portfoliios, expect: [:show]
+  resources :portfoliios, expect: [:show,]
+  get 'rails-item', to: 'portfoliios#prails'
   get 'portfoliio/:id', to: 'portfoliios#show', as: 'portfoliio_show'
+
   #get 'pages/contact'
   #get 'pages/about'
   #get 'pages/home'
