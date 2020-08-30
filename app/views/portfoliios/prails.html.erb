@@ -1,0 +1,17 @@
+<h1>Rails Portfolio Item</h1>
+ <%= link_to "Create new Portfolio for rails", new_portfoliio_path %>
+
+<%  @rails_items.each do |portfoliio_item| %>
+  <p><%= link_to portfoliio_item.title, portfoliio_show_path(portfoliio_item.id) %></p>
+  <p><%= portfoliio_item.subtitle %></p>
+  <p><%= portfoliio_item.body %></p>
+  <p><%#= image_tag portfoliio_item.main_img %></p>
+  <p><%= image_tag portfoliio_item.thumb_img unless portfoliio_item.thumb_img.nil?%>
+  </p>
+  <%= link_to "Edit", edit_portfoliio_path(portfoliio_item.id) %>
+  <a href="/portfoliios/<%= portfoliio_item.id %>/edit">edit</a>
+
+  <%= link_to 'Destroy', portfoliio_path(portfoliio_item.id), method: :delete,
+     data: { confirm: 'Are you sure?' } %>
+
+<%end%>

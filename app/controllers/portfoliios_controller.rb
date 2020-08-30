@@ -12,7 +12,7 @@ class PortfoliiosController < ApplicationController
   end
 
   def create
-    @portfoliio_item = Portfoliio.new(params.require(:portfoliio).permit(:title, :subtitile, :body))
+    @portfoliio_item = Portfoliio.new(params.require(:portfoliio).permit(:title, :subtitle, :body))
     respond_to do |format|
       if @portfoliio_item.save
         format.html { redirect_to portfoliios_path, notice: 'Portfolio was successfully created.' }
