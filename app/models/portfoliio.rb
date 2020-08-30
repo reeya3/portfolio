@@ -3,13 +3,14 @@ class Portfoliio < ApplicationRecord
   scope :rails, -> { where(subtitle: "this is sub title for rails") }
 
   after_initialize :set_default
+  include Placeholder
   
   def self.rails
     where(subtitle: "this is sub title for rails")
   end
 
   def set_default
-    self.main_img ||= "https://via.placeholder.com/150x200"
-    self.thumb_img ||= "https://via.placeholder.com/150x200"
+    self.main_img ||= Placeholder.image_generator(height: '150', width: '150')
+    self.thumb_img ||= Placeholder.image_generator(height: '150', width: '150')
   end
 end
