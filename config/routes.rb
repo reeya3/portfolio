@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  devise_for :users
+  devise_for :views
   resources :portfoliios, expect: [:show]
   get 'portfoliio/:id', to: 'portfoliios#show', as: 'portfoliio_show'
   #get 'pages/contact'
