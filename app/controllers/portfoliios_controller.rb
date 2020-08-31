@@ -9,10 +9,12 @@ class PortfoliiosController < ApplicationController
 
   def new
     @portfoliio_item = Portfoliio.new
+    3.times { @portfoliio_item.technologies.build }
   end
 
   def create
-    @portfoliio_item = Portfoliio.new(params.require(:portfoliio).permit(:title, :subtitle, :body))
+    @portfoliio_item = Portfoliio.new(params.require(:portfoliio).permit(:title, :subtitle, :body,
+                       technologies_attributes: [:name]))
     respond_to do |format|
       if @portfoliio_item.save
         format.html { redirect_to portfoliios_path, notice: 'Portfolio was successfully created.' }
